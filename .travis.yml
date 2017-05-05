@@ -17,6 +17,9 @@ matrix:
 
   - os: osx
     r: release
+    osx_image: xcode8.3
+  - os: osx
+    r: release
     before_install: |1
      mkdir ~/.R
      cat <<EOF > ~/.R/Makevars
