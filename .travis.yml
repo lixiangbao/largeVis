@@ -21,6 +21,7 @@ matrix:
   - os: osx
     r: release
     before_install: |1
+     brew update
      mkdir ~/.R
      cat <<EOF > ~/.R/Makevars
      CC=/usr/local/opt/llvm/bin/clang
