@@ -17,6 +17,14 @@ matrix:
 
   - os: osx
     r: release
+    before_install: |1
+     mkdir ~/.R
+     cat <<EOF > ~/.R/Makevars
+     CC=/usr/local/opt/llvm/bin/clang
+     CXX=/usr/local/opt/llvm/bin/clang++
+     CXX1X=/usr/local/opt/llvm/bin/clang++
+     CXX11=/usr/local/opt/llvm/bin/clang++
+
   - os: linux
     dist: trusty
     r: devel
@@ -31,6 +39,14 @@ matrix:
   - os: osx
     r: devel
     env: _R_CHECK_FORCE_SUGGESTS_=FALSE
+    before_install: |1
+     mkdir ~/.R
+     cat <<EOF > ~/.R/Makevars
+     CC=/usr/local/opt/llvm/bin/clang
+     CXX=/usr/local/opt/llvm/bin/clang++
+     CXX1X=/usr/local/opt/llvm/bin/clang++
+     CXX11=/usr/local/opt/llvm/bin/clang++
+
   allow_failure:
     r: devel
     r_check_args: --use-valgrind
